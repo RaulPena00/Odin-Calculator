@@ -1,7 +1,7 @@
 var inputedNumbers = [];
 var inputedAuxNumb = [];
 var totalDisplayed = [];
-var contador = 0;
+var controler = 0;
 var operator = 'op';
 var total = [];
 var aux = [];
@@ -42,10 +42,10 @@ btn8.addEventListener('click', () => validator("8"));
 btn9.addEventListener('click', () => validator("9"));
 btn0.addEventListener('click', () => validator("0"));
 
-additionBtn.addEventListener('click', () => operator = "+");
-subtractionBtn.addEventListener('click', () => operator = "-");
-multiplicationBtn.addEventListener('click', () => operator = "x");
-divisionBtn.addEventListener('click', () => operator = "/");
+additionBtn.addEventListener('click', () => {operator = "+"; controler = 5;});
+subtractionBtn.addEventListener('click', () => {operator = "-"; controler = 5 });
+multiplicationBtn.addEventListener('click', () => {operator = "x"; controler = 5});
+divisionBtn.addEventListener('click', () => {operator = "/"; controler = 5});
 
 clearBtn.addEventListener('click', () => clearAll());
 
@@ -55,10 +55,12 @@ equalsBtn.addEventListener('click', () => equals());
 function equals() {
     if (display_total === 0){
         operate(operator, ...total, ...aux);
+        Math.round(display_total)
         return display_total;
     }
     else if (display_total !== 0) {
         operate(operator, display_total, ...totDisplayed);
+        Math.round(display_total)
         return display_total;
     }
 };
@@ -71,7 +73,7 @@ function clear() {
     operator = 'op'
     totDisplayed.length = 0;
     totalDisplayed.length = 0;
-    contador = 0
+    controler = 0
 };
 
 function clearAll() {
@@ -82,7 +84,7 @@ function clearAll() {
     operator = 'op';
     totDisplayed.length = 0;
     totalDisplayed.length = 0;
-    contador = 0;
+    controler = 0;
     display_total = 0;
     display.innerHTML = display_total;
 };
@@ -141,195 +143,195 @@ function operate(operator, num1, num2) {
 //Validates the numbers inputed by the user in the UI and add them to the respective arrays
 //This method work's with two arrays, one is used before the operator is selected and the other after the selection
 function validator(num) {
-    if (contador < 10) {
-        if (contador < 5 && operator === 'op') {
+    if (controler < 10) {
+        if (controler < 5 && operator === 'op') {
             if (num == "1") {
                 inputedNumbers.push("1");
                 total = [parseInt(inputedNumbers.join(''))]
                 display.innerHTML = total;
-                return total, contador++;
+                return total, controler++;
             }
             else if (num === "2") {
                 inputedNumbers.push("2");
                 total = [parseInt(inputedNumbers.join(''))]
                 display.innerHTML = total;
-                return total, contador++;
+                return total, controler++;
             }
             else if (num === "3") {
                 inputedNumbers.push("3")
                 total = [parseInt(inputedNumbers.join(''))];
                 display.innerHTML = total;
-                return total, contador++;
+                return total, controler++;
             }
             else if (num === "4") {
                 inputedNumbers.push("4");
                 total = [parseInt(inputedNumbers.join(''))]
                 display.innerHTML = total;
-                return total, contador++;
+                return total, controler++;
             }
             else if (num === "5") {
                 inputedNumbers.push("5");
                 total = [parseInt(inputedNumbers.join(''))]
                 display.innerHTML = total;
-                return total, contador++;
+                return total, controler++;
             }
             else if (num === "6") {
                 inputedNumbers.push("6");
                 total = [parseInt(inputedNumbers.join(''))]
                 display.innerHTML = total;
-                return total, contador++;
+                return total, controler++;
             }
             else if (num === "7") {
                 inputedNumbers.push("7");
                 total = [parseInt(inputedNumbers.join(''))]
                 display.innerHTML = total;
-                return total, contador++;
+                return total, controler++;
             }
             else if (num === "8") {
                 inputedNumbers.push("8");
                 total = [parseInt(inputedNumbers.join(''))]
                 display.innerHTML = total;
-                return total, contador++;
+                return total, controler++;
             }
             else if (num === "9") {
                 inputedNumbers.push("9");
                 total = [parseInt(inputedNumbers.join(''))]
                 display.innerHTML = total;
-                return total, contador++;
+                return total, controler++;
             }
             else if (num === "0") {
                 inputedNumbers.push("0");
                 total = [parseInt(inputedNumbers.join(''))]
                 display.innerHTML = total;
-                return total, contador++;
+                return total, controler++;
             }
         }
 
-        else if (operator !== 'op' && contador < 10 && display_total === 0) {
+        else if (operator !== 'op' && controler < 10 && display_total === 0) {
             if (num == "1") {
                 inputedAuxNumb.push("1");
                 aux = [parseInt(inputedAuxNumb.join(''))]
                 display.innerHTML = aux;
-                return aux, contador++;
+                return aux, controler++;
             }
             if (num == "2") {
                 inputedAuxNumb.push("2");
                 aux = [parseInt(inputedAuxNumb.join(''))]
                 display.innerHTML = aux;
-                return aux, contador++;
+                return aux, controler++;
             }
             if (num == "3") {
                 inputedAuxNumb.push("3");
                 aux = [parseInt(inputedAuxNumb.join(''))]
                 display.innerHTML = aux;
-                return aux, contador++;
+                return aux, controler++;
             }
             if (num == "4") {
                 inputedAuxNumb.push("4");
                 aux = [parseInt(inputedAuxNumb.join(''))]
                 display.innerHTML = aux;
-                return aux, contador++;
+                return aux, controler++;
             }
             if (num == "5") {
                 inputedAuxNumb.push("5");
                 aux = [parseInt(inputedAuxNumb.join(''))]
                 display.innerHTML = aux;
-                return aux, contador++;
+                return aux, controler++;
             }
             if (num == "6") {
                 inputedAuxNumb.push("6");
                 aux = [parseInt(inputedAuxNumb.join(''))]
                 display.innerHTML = aux;
-                return aux, contador++;
+                return aux, controler++;
             }
             if (num == "7") {
                 inputedAuxNumb.push("7");
                 aux = [parseInt(inputedAuxNumb.join(''))]
                 display.innerHTML = aux;
-                return aux, contador++;
+                return aux, controler++;
             }
             if (num == "8") {
                 inputedAuxNumb.push("8");
                 aux = [parseInt(inputedAuxNumb.join(''))]
                 display.innerHTML = aux;
-                return aux, contador++;
+                return aux, controler++;
             }
             if (num == "9") {
                 inputedAuxNumb.push("9");
                 aux = [parseInt(inputedAuxNumb.join(''))]
                 display.innerHTML = aux;
-                return aux, contador++;
+                return aux, controler++;
             }
             if (num == "0") {
                 inputedAuxNumb.push("0");
                 aux = [parseInt(inputedAuxNumb.join(''))]
                 display.innerHTML = aux;
-                return aux, contador++;
+                return aux, controler++;
             }
         }
-        else if ((operator !== 'op' || operator === 0) && display_total !== 0 && contador < 5) {
+        else if ((operator !== 'op' || operator === 0) && display_total !== 0 && controler < 5) {
             if (num === "1") {
                 totalDisplayed.push("1");
                 totDisplayed = [parseInt(totalDisplayed.join(''))]
                 display.innerHTML = totDisplayed;
-                return totDisplayed, contador++;
+                return totDisplayed, controler++;
             }
             if (num === "2") {
                 totalDisplayed.push("2");
                 totDisplayed = [parseInt(totalDisplayed.join(''))]
                 display.innerHTML = totDisplayed;
-                return totDisplayed, contador++;
+                return totDisplayed, controler++;
             }
             if (num === "3") {
                 totalDisplayed.push("3");
                 totDisplayed = [parseInt(totalDisplayed.join(''))]
                 display.innerHTML = totDisplayed;
-                return totDisplayed, contador++;
+                return totDisplayed, controler++;
             }
             if (num === "4") {
                 totalDisplayed.push("4");
                 totDisplayed = [parseInt(totalDisplayed.join(''))]
                 display.innerHTML = totDisplayed;
-                return totDisplayed, contador++;
+                return totDisplayed, controler++;
             }
             if (num === "5") {
                 totalDisplayed.push("5");
                 totDisplayed = [parseInt(totalDisplayed.join(''))]
                 display.innerHTML = totDisplayed;
-                return totDisplayed, contador++;
+                return totDisplayed, controler++;
             }
             if (num === "6") {
                 totalDisplayed.push("6");
                 totDisplayed = [parseInt(totalDisplayed.join(''))]
                 display.innerHTML = totDisplayed;
-                return totDisplayed, contador++;
+                return totDisplayed, controler++;
             }
             if (num === "7") {
                 totalDisplayed.push("7");
                 totDisplayed = [parseInt(totalDisplayed.join(''))]
                 display.innerHTML = totDisplayed;
-                return totDisplayed, contador++;
+                return totDisplayed, controler++;
             }
             if (num === "8") {
                 totalDisplayed.push("8");
                 totDisplayed = [parseInt(totalDisplayed.join(''))]
                 display.innerHTML = totDisplayed;
-                return totDisplayed, contador++;
+                return totDisplayed, controler++;
             }
             if (num === "9") {
                 totalDisplayed.push("9");
                 totDisplayed = [parseInt(totalDisplayed.join(''))]
                 display.innerHTML = totDisplayed;
-                return totDisplayed, contador++;
+                return totDisplayed, controler++;
             }
             if (num === "0") {
                 totalDisplayed.push("0");
                 totDisplayed = [parseInt(totalDisplayed.join(''))]
                 display.innerHTML = totDisplayed;
-                return totDisplayed, contador++;
+                return totDisplayed, controler++;
             }
         }
-        else if (operator === 'op' && contador === 5) {
+        else if (operator === 'op' && controler === 5) {
             alert("Select an operator");
             if ((operator !== 'op' || operator === 0) && display_total !== 0) {
                 return totDisplayed;
