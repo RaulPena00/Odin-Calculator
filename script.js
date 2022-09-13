@@ -42,18 +42,18 @@ btn8.addEventListener('click', () => validator("8"));
 btn9.addEventListener('click', () => validator("9"));
 btn0.addEventListener('click', () => validator("0"));
 
-additionBtn.addEventListener('click', () => { operator = "+" });
-subtractionBtn.addEventListener('click', () => { operator = "-" });
-multiplicationBtn.addEventListener('click', () => { operator = "x" });
+additionBtn.addEventListener('click', () => operator = "+");
+subtractionBtn.addEventListener('click', () => operator = "-");
+multiplicationBtn.addEventListener('click', () => operator = "x");
 divisionBtn.addEventListener('click', () => operator = "/");
 
-clearBtn.addEventListener('click', () => clearAll())
+clearBtn.addEventListener('click', () => clearAll());
 
-equalsBtn.addEventListener('click', () => { equals() });
+equalsBtn.addEventListener('click', () => equals());
 
 
 function equals() {
-    if (display_total === 0) {
+    if (display_total === 0){
         operate(operator, ...total, ...aux);
         return display_total;
     }
@@ -72,7 +72,7 @@ function clear() {
     totDisplayed.length = 0;
     totalDisplayed.length = 0;
     contador = 0
-}
+};
 
 function clearAll() {
     inputedNumbers.length = 0;
@@ -85,7 +85,7 @@ function clearAll() {
     contador = 0;
     display_total = 0;
     display.innerHTML = display_total;
-}
+};
 
 //Execute the 4 operations and display the result on the UI
 function addition(num1, num2) {
@@ -331,10 +331,10 @@ function validator(num) {
         }
         else if (operator === 'op' && contador === 5) {
             alert("Select an operator");
-            if ((operator !== 'op' || operator === 0) && display_total !== 0){
+            if ((operator !== 'op' || operator === 0) && display_total !== 0) {
                 return totDisplayed;
             }
-            else{
+            else {
                 return total;
             }
         }
