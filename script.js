@@ -42,10 +42,10 @@ btn8.addEventListener('click', () => validator("8"));
 btn9.addEventListener('click', () => validator("9"));
 btn0.addEventListener('click', () => validator("0"));
 
-additionBtn.addEventListener('click', () => {operator = "+"; controler = 5;});
-subtractionBtn.addEventListener('click', () => {operator = "-"; controler = 5 });
-multiplicationBtn.addEventListener('click', () => {operator = "x"; controler = 5});
-divisionBtn.addEventListener('click', () => {operator = "/"; controler = 5});
+additionBtn.addEventListener('click', () => operator = "+");
+subtractionBtn.addEventListener('click', () => operator = "-");
+multiplicationBtn.addEventListener('click', () => operator = "x");
+divisionBtn.addEventListener('click', () => operator = "/");
 
 clearBtn.addEventListener('click', () => clearAll());
 
@@ -207,7 +207,7 @@ function validator(num) {
             }
         }
 
-        else if (operator !== 'op' && controler < 10 && display_total === 0) {
+        else if (operator !== 'op' && controler < 10 && display_total === 0){
             if (num == "1") {
                 inputedAuxNumb.push("1");
                 aux = [parseInt(inputedAuxNumb.join(''))]
@@ -333,7 +333,7 @@ function validator(num) {
         }
         else if (operator === 'op' && controler === 5) {
             alert("Select an operator");
-            if ((operator !== 'op' || operator === 0) && display_total !== 0) {
+            if (display_total !== 0) {
                 return totDisplayed;
             }
             else {
